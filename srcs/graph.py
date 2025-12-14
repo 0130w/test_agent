@@ -1,4 +1,4 @@
-from langgraph.graph import StateGraph, START, END
+from langgraph.graph import StateGraph, END
 
 from srcs.state import MessagesState
 from srcs.nodes.planner import planner
@@ -12,9 +12,8 @@ def build_graph():
     workflow.add_node('coder', coder)
     workflow.add_node('reviewer', reviewer)
 
-    workflow.set_entry_point(START)
+    workflow.set_entry_point('planner')
 
-    workflow.add_edge(START, 'planner')
     workflow.add_edge('planner', 'coder')
     workflow.add_edge('coder', 'reviewer')
     workflow.add_edge('reviewer', END)
