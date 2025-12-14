@@ -80,3 +80,17 @@ def create_pull_request(title: str, body: str, head_branch: str, base_branch: st
         return f"PR Created Successfully! URL: {pr.html_url}"
     except Exception as e:
         return f"Error creating PR: {e}"
+
+@tool
+def count_file_lines(file_path: str) -> str:
+    """
+    count the total number of lines in a file
+    """
+    try:
+        with open(file_path, "r", encoding='utf-8') as f:
+            line_count = sum(1 for _ in f)
+        return f"File '{file_path}' has {line_count} lines"
+    except FileNotFoundError:
+        return f"Error: File '{file_path}' not found"
+    except Exception as e:
+        return f"Error counting lines in file: {e}"
