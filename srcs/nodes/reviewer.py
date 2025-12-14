@@ -3,9 +3,8 @@ from langchain_deepseek import ChatDeepSeek
 from langchain_core.messages import SystemMessage
 from langgraph.prebuilt import create_react_agent
 
-from tools import list_files, read_file, run_shell_command, create_pull_request
-
-from state import MessagesState
+from srcs.tools import list_files, read_file, run_shell_command, create_pull_request
+from srcs.state import MessagesState
 
 def reviewer(state: MessagesState):
     print("--- REVIEWER NODE (Release Manager) ---")

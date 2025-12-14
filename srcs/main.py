@@ -2,8 +2,8 @@ import os
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
 
-from graph import build_graph
-from state import MessagesState
+from srcs.graph import build_graph
+from srcs.state import MessagesState
 
 load_dotenv()
 
