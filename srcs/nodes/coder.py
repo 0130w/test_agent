@@ -2,8 +2,8 @@ from langchain_core.messages import SystemMessage
 from langchain_deepseek import ChatDeepSeek
 from langgraph.prebuilt import create_react_agent
 
-from ..tools import list_files, read_file, write_file, run_shell_command
-from ..state import MessagesState
+from tools import list_files, read_file, write_file, run_shell_command
+from state import MessagesState
 
 def coder(state: MessagesState):
     print("--- CODER NODE (Software Engineer) ---")

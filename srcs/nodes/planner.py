@@ -1,7 +1,7 @@
 from langchain_core.messages import SystemMessage
 from langchain_deepseek import ChatDeepSeek
 
-from ..state import MessagesState
+from state import MessagesState
 
 def planner(state: MessagesState):
     print("--- PLANNER NODE (Architect) ---")
